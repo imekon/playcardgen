@@ -1,0 +1,184 @@
+object MainForm: TMainForm
+  Left = 280
+  Height = 647
+  Top = 145
+  Width = 913
+  Caption = 'Playing Card Generator'
+  ClientHeight = 647
+  ClientWidth = 913
+  OnCreate = FormCreate
+  Position = poDefaultPosOnly
+  LCLVersion = '3.4.0.0'
+  object Label1: TLabel
+    Left = 33
+    Height = 15
+    Top = 41
+    Width = 24
+    Caption = 'Font'
+  end
+  object FontButton: TButton
+    Left = 80
+    Height = 49
+    Top = 40
+    Width = 147
+    Caption = 'A'
+    TabOrder = 0
+    OnClick = OnFontButton
+  end
+  object Label2: TLabel
+    Left = 33
+    Height = 15
+    Top = 106
+    Width = 48
+    Caption = 'Card Size'
+  end
+  object CardWidthEdit: TEdit
+    Left = 96
+    Height = 23
+    Top = 104
+    Width = 80
+    Enabled = False
+    TabOrder = 1
+    Text = '0'
+  end
+  object CardWidthHeight: TEdit
+    Left = 200
+    Height = 23
+    Top = 104
+    Width = 80
+    Enabled = False
+    TabOrder = 2
+    Text = '0'
+  end
+  object Label3: TLabel
+    Left = 34
+    Height = 15
+    Top = 158
+    Width = 30
+    Caption = 'Clubs'
+  end
+  object Label4: TLabel
+    Left = 232
+    Height = 15
+    Top = 158
+    Width = 54
+    Caption = 'Diamonds'
+  end
+  object Label5: TLabel
+    Left = 664
+    Height = 15
+    Top = 158
+    Width = 37
+    Caption = 'Spades'
+  end
+  object Label6: TLabel
+    Left = 456
+    Height = 15
+    Top = 158
+    Width = 34
+    Caption = 'Hearts'
+  end
+  object ClubsImage: TImage
+    Left = 103
+    Height = 90
+    Top = 158
+    Width = 90
+  end
+  object DiamondsImage: TImage
+    Left = 312
+    Height = 90
+    Top = 158
+    Width = 90
+  end
+  object HeartsImage: TImage
+    Left = 528
+    Height = 90
+    Top = 158
+    Width = 90
+  end
+  object SpadesImage: TImage
+    Left = 736
+    Height = 90
+    Top = 158
+    Width = 90
+  end
+  object Label7: TLabel
+    Left = 366
+    Height = 15
+    Top = 41
+    Width = 20
+    Caption = 'Suit'
+  end
+  object SuitList: TComboBox
+    Left = 408
+    Height = 23
+    Top = 39
+    Width = 100
+    ItemHeight = 15
+    ItemIndex = 0
+    Items.Strings = (
+      'Clubs'
+      'Diamonds'
+      'Hearts'
+      'Spades'
+      'Other'
+    )
+    Style = csDropDownList
+    TabOrder = 3
+    Text = 'Clubs'
+  end
+  object Label8: TLabel
+    Left = 544
+    Height = 15
+    Top = 40
+    Width = 25
+    Caption = 'Card'
+  end
+  object CardList: TComboBox
+    Left = 593
+    Height = 23
+    Top = 40
+    Width = 100
+    ItemHeight = 15
+    ItemIndex = 0
+    Items.Strings = (
+      'Ace'
+      '2'
+      '3'
+      '4'
+      '5'
+      '6'
+      '7'
+      '8'
+      '9'
+      '10'
+      'Jack'
+      'Queen'
+      'King'
+    )
+    Style = csDropDownList
+    TabOrder = 4
+    Text = 'Ace'
+  end
+  object CardImage: TImage
+    Left = 408
+    Height = 176
+    Top = 341
+    Width = 112
+  end
+  object GenerateButton: TButton
+    Left = 424
+    Height = 25
+    Top = 584
+    Width = 75
+    Caption = 'Generate'
+    TabOrder = 5
+    OnClick = OnGenerate
+  end
+  object FontDialog: TFontDialog
+    MinFontSize = 0
+    MaxFontSize = 0
+    Left = 274
+    Top = 32
+  end
+end
