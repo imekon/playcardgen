@@ -1,10 +1,10 @@
 object MainForm: TMainForm
-  Left = 280
-  Height = 647
-  Top = 145
+  Left = 279
+  Height = 637
+  Top = 194
   Width = 913
   Caption = 'Playing Card Generator'
-  ClientHeight = 647
+  ClientHeight = 637
   ClientWidth = 913
   OnCreate = FormCreate
   Position = poDefaultPosOnly

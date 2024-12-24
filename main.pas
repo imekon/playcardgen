@@ -70,6 +70,7 @@ const
 
 var
   i, x, y, suit, num: integer;
+  rect: TRect;
   filename: string;
   image: TPortableNetworkGraphic;
   suitImage: array [0..3] of TPicture;
@@ -96,8 +97,21 @@ begin
 
     image.Canvas.Brush.Color := clWhite;
     image.Canvas.FillRect(0, 0, CardWidthDefault - 1, CardHeightDefault - 1);
-    image.Canvas.Draw(x, y, suitImage[suit].Graphic);
+    if (num > 0) and (num < 10) then
+    begin
+      rect.Left := x;
+      rect.Top := y;
+      rect.Width := 64;
+      rect.Height := 64;
+      image.Canvas.StretchDraw(rect, suitImage[suit].Graphic);
+    end
+    else
+      image.Canvas.Draw(x, y, suitImage[suit].Graphic);
+
+    image.Canvas.Font.Orientation := 0;
     image.Canvas.TextOut(5, 5, numbers[num]);
+    image.Canvas.Font.Orientation := 1800;
+    image.Canvas.TextOut(CardWidthDefault - 5, CardHeightDefault - 5, numbers[num]);
 
     filename := 'generated/' + suits[suit] + '/' + numbers[num] + '_' + suits[suit] + '.png';
     image.SaveToFile(filename);
